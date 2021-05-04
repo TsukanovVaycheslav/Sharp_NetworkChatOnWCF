@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:СhatClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
-    <Grid Loaded="Grid_Loaded">
-     
+        Title="MainWindow" Height="368.842" Width="597.723" Closing="Window_Closing">
+    <Grid Loaded="Grid_Loaded" HorizontalAlignment="Left" Margin="0,0,-0.4,0" Width="604">
 
-        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Height="34" Margin="255,27,0,0" TextWrapping="Wrap" Text="Имя пользователя:" VerticalAlignment="Top" Width="529" FontSize="22px" Grid.ColumnSpan="3"/>
-        <Button x:Name="bConnDicon" Click="Button_Click" Content="Connect" HorizontalAlignment="Left" Margin="35,27,0,0" VerticalAlignment="Top" Width="145" Height="34" FontSize="22px"/>
-        <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="238" Margin="10,80,0,0" VerticalAlignment="Top" Width="774" Grid.ColumnSpan="3" FontSize="18px"/>
-        <TextBox x:Name="lbMessage" HorizontalAlignment="Left" Height="60" Margin="11,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="773" Grid.ColumnSpan="3" KeyDown="lbMessage_KeyDown" FontSize="22px"/>
+
+        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Height="34" Margin="178,27,0,0" TextWrapping="Wrap" Text="Имя пользователя:" VerticalAlignment="Top" Width="403" FontSize="18px"/>
+        <Button x:Name="bConnDicon" Click="Button_Click" Content="Connect" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="145" Height="34" FontSize="22px"/>
+        <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="168" Margin="10,80,0,0" VerticalAlignment="Top" Width="571" FontSize="12px"/>
+        <TextBox x:Name="lbMessage" HorizontalAlignment="Left" Height="52" Margin="10,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="571" KeyDown="lbMessage_KeyDown" FontSize="22px"/>
 
     </Grid>
 </Window>

@@ -9,8 +9,8 @@ namespace СhatClient
     /// </summary>
     public partial class MainWindow : Window, IServiceChatCallback
     {
-        bool isConnected = false;
-        ServiceChatClient client;
+        bool isConnected = false;   // Проверка подключение к серверу
+        ServiceChatClient client;   // Взаимодействие хоста с его методами
         int ID;
 
         public MainWindow()
@@ -18,12 +18,9 @@ namespace СhatClient
             InitializeComponent();
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        private void Grid_Loaded(object sender, RoutedEventArgs e) { }
 
-        void ConnectUser()
+        void ConnectUser()      // Подключение к сервису
         {
             if (!isConnected)
             {
@@ -34,7 +31,7 @@ namespace СhatClient
                 isConnected = true;
             }
         }
-        void DisconnectUser()
+        void DisconnectUser()   // Отключение от сервиса
         {
             if (isConnected)
             {
@@ -58,18 +55,18 @@ namespace СhatClient
             }
         }
 
-        public void MsgCallback(string msg)
+        public void MsgCallback(string msg) // Сообщение
         {
-            lbChat.Items.Add(msg);
+            lbChat.Items.Add(msg);          // Добавление сообщения в ListBox
             lbChat.ScrollIntoView(lbChat.Items[lbChat.Items.Count - 1]);
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) // Закрытия окна чата
         {
             DisconnectUser();
         }
 
-        private void lbMessage_KeyDown(object sender, KeyEventArgs e)
+        private void lbMessage_KeyDown(object sender, KeyEventArgs e)   // Нажатия кнопок
         {
             if(e.Key == Key.Enter)
             {

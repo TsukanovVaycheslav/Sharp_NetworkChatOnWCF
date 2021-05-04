@@ -2,21 +2,23 @@
 
 namespace wcf_chat
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "IServiceChat" в коде и файле конфигурации.
+    // Спомощью интерфейса мы описали, как будет работать наш сервис
+    // Интерфейс вызывается на стороне клиента
     [ServiceContract(CallbackContract = typeof(IServerChatCallback))]
     public interface IServiceChat
     {
+        // Реализация интерфеса
         [OperationContract]
-        int Connect(string name);
+        int Connect(string name);   // Подключение к сервису (Обязательно должны дождаться ответа сервера)
 
         [OperationContract]
-        void Disconnect(int id);
+        void Disconnect(int id);    // Отключение от сервиса
 
         [OperationContract(IsOneWay = true)]
-        void SendMSG(string msg, int id);
+        void SendMSG(string msg, int id);   // Клиент посылает ответ
     }
 
-    public interface IServerChatCallback
+    public interface IServerChatCallback    // Функция обратного вызова (Получение сообщение от сервера)
     {
         [OperationContract(IsOneWay = true)]
         void MsgCallback(string msg);
